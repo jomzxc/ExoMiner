@@ -17,6 +17,31 @@ The ExoMiner vetting catalog is a Dash-based web application that displays TESS 
 - `vercel.json` - Vercel configuration file that defines the build and routing
 - `api/index.py` - Serverless function entry point that wraps the Dash app
 - `requirements.txt` - Python dependencies for the application
+- `.vercelignore` - Specifies files to exclude from deployment
+- `index.html` - Landing page with auto-redirect to the application
+
+## Project Structure
+
+```
+ExoMiner/
+├── api/
+│   └── index.py                          # Vercel serverless function
+├── exominer_vetting_pc_catalog_dash-render-web-app/
+│   ├── assets/
+│   │   └── exominer_logo.png            # App logo
+│   ├── data/
+│   │   └── exominer_vetting_...csv      # TCE data
+│   ├── requirements.txt                  # App-specific dependencies
+│   └── vetting_tce_catalog_exominer_dash_app.py  # Main Dash app
+├── others/
+│   └── images/
+│       └── exominer_logo.png            # Additional logo
+├── vercel.json                           # Vercel configuration
+├── requirements.txt                      # Root dependencies for Vercel
+├── .vercelignore                        # Deployment exclusions
+├── index.html                           # Landing page
+└── README_VERCEL.md                     # This file
+```
 
 ## Deployment Steps
 
@@ -148,6 +173,15 @@ For issues related to:
 - Vercel serverless functions have a default timeout of 10 seconds (can be increased in Pro plans)
 - The CSV file (~2.8 MB) is loaded on each request, which may impact performance
 - Consider implementing caching strategies for production use
+- The deployment size is configured to allow up to 50MB (see `maxLambdaSize` in `vercel.json`)
+
+## Important Notes
+
+1. **Cold Starts**: The first request after deployment may take longer due to cold start times
+2. **Static Assets**: Images and CSS are served through the Dash app's built-in asset handling
+3. **Data Updates**: To update the catalog data, modify the CSV file and redeploy
+4. **Python Version**: The deployment uses Python 3.12 (configurable in `vercel.json`)
+5. **Environment**: The app runs in a serverless environment, so persistent storage is not available
 
 ## Additional Resources
 

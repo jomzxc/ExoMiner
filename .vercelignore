@@ -1,0 +1,59 @@
+# Vercel deployment ignore file
+
+# Documentation
+docs/
+*.md
+!README_VERCEL.md
+
+# Development files
+.git/
+.github/
+.gitignore
+.dockerignore
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.ipynb_checkpoints/
+
+# Conda environments
+*.yml
+*.yaml
+!vercel.json
+
+# Large data files that are not needed for the web app
+models/
+src/
+src_cv/
+src_hpo/
+src_preprocessing/
+exominer_pipeline/
+transit_detection/
+archived_experiments/
+tess_spoc_ffi/
+data_wrangling/
+job_scripts/
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
+# Docker
+Dockerfile
+*.pbs
+
+# Other
+others/licenses/
+others/envs/
+others/media/
+query_dv_report_and_summary.py
+clean_repo_for_deployment.sh
