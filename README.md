@@ -90,6 +90,10 @@ For more detailed information see the following publications:
   - **Data repository on Zenodo**: [here](https://doi.org/10.5281/zenodo.15466292)
   - **Interactive vetting catalog**: [here](http://exominer-vetter-tess-pc-catalog.onrender.com/)
 
+## Vercel Deployment
+
+The ExoMiner vetting catalog web application can now be deployed on Vercel! This provides a fast, scalable way to host the interactive catalog. See [README_VERCEL.md](README_VERCEL.md) for detailed deployment instructions.
+
 ## Credits
 
 This work was developed by members of the Data Sciences Group, DASH, Intelligent Systems Division (Code-TI) at NASA Ames 

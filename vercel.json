@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "name": "exominer-vetting-catalog",
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/exominer_vetting_pc_catalog_dash-render-web-app/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "api/index.py"
+    }
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.12"
+  }
+}

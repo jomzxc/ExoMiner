@@ -33,3 +33,7 @@ others/envs/others/envs/conda_env_exoplnt_dl_gh.yml
 others/envs/others/envs/tf2_16.yml
 others/envs/others/envs/conda_env_exoplnt_dl_hecc.yml
 others/envs/others/envs/conda_env_exoplnt_dl_tf2_13.yml
+
+# Vercel
+.vercel
+*.log
